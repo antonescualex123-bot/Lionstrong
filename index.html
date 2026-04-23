@@ -10,22 +10,22 @@
 body{font-family:'DM Sans',sans-serif;background:#0a1518;color:#cdd8dc;min-height:100vh;}
 .ctn{max-width:1100px;margin:0 auto;padding:48px 36px;}
 nav{display:flex;gap:20px;margin-bottom:44px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;}
-nav a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;}
+nav a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s;}
 nav a:hover{color:#4a9e8e;}
-.hdr{display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:48px;}
+.hdr{display:flex;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:52px;}
+.hdr-left{flex:1;min-width:280px;}
 .hdr-left h1{font-size:42px;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:8px;}
-.hdr-left .sub{font-size:13px;color:rgba(255,255,255,.35);}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.hdr-left .sub{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;}
+.hdr-left .context-bar{margin-top:16px;padding:14px 18px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;font-size:12px;color:rgba(255,255,255,.4);line-height:1.8;}
+.hdr-left .context-bar strong{color:rgba(255,255,255,.7);}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;min-width:260px;}
 .kpi{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 18px;}
 .kpi-v{font-size:26px;font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;}
+.kpi-v.teal{color:#4a9e8e;}
 .kpi-l{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.3);margin-top:4px;}
-section{margin-bottom:52px;}
+section{margin-bottom:56px;}
 h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.3px;}
 .sub-line{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;}
-.fw{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:22px 24px;display:flex;gap:24px;flex-wrap:wrap;}
-.fw-item{flex:1;min-width:180px;}
-.fw-label{font-size:11px;font-weight:700;color:#4a9e8e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px;}
-.fw-item p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;}
 .tbl-wrap{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.05);border-radius:10px;overflow:hidden;}
 table{width:100%;border-collapse:collapse;}
 th{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.3);padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);text-align:right;}
@@ -34,287 +34,256 @@ td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.03);text-align:ri
 td:first-child{text-align:left;color:#fff;font-weight:500;}
 tr:last-child td{border-bottom:none;}
 tr:hover td{background:rgba(255,255,255,.015);}
-.y25{color:rgba(255,255,255,.32)!important;}
+.y25{color:rgba(255,255,255,.3)!important;}
 .y26{color:rgba(255,255,255,.72)!important;}
 .good{color:#4a9e8e!important;font-weight:700;}
 .bad{color:#c45454!important;font-weight:700;}
 .warn-c{color:#c9a520!important;font-weight:600;}
-.neutral-w{color:rgba(255,255,255,.55)!important;}
-.b-g{background:rgba(74,158,142,.1);color:#5ba89d;font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;}
-.b-y{background:rgba(201,165,32,.08);color:#c9a520;font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;}
-.b-r{background:rgba(196,84,84,.08);color:#c45454;font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;}
-.summ{display:flex;flex-direction:column;gap:14px;}
-.s-item{border-left:2px solid #4a9e8e;padding-left:14px;}
-.s-item.warn{border-left-color:#c9a520;}
-.s-item.neg{border-left-color:#c45454;}
-.s-item h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
-.s-item p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;}
-.stat-row{display:flex;gap:32px;margin-bottom:20px;flex-wrap:wrap;}
-.stat-item .sv{font-size:28px;font-weight:800;color:#fff;letter-spacing:-1px;}
-.stat-item .sl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:2px;}
-.divider{border:none;border-top:1px solid rgba(255,255,255,.05);margin:48px 0;}
-.callout{background:rgba(196,84,84,.06);border:1px solid rgba(196,84,84,.15);border-radius:10px;padding:20px 24px;margin-bottom:16px;}
-.callout h4{font-size:14px;font-weight:700;color:#c45454;margin-bottom:6px;}
-.callout p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;}
-.callout-note{background:rgba(74,158,142,.05);border:1px solid rgba(74,158,142,.12);border-radius:10px;padding:20px 24px;margin-bottom:16px;}
-.callout-note h4{font-size:14px;font-weight:700;color:#4a9e8e;margin-bottom:6px;}
-.callout-note p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.discovery-hero{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
+.neutral-w{color:rgba(255,255,255,.5)!important;}
+.fw{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:22px 24px;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:20px;}
+.fw-item{flex:1;min-width:180px;}
+.fw-label{font-size:11px;font-weight:700;color:#4a9e8e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px;}
+.fw-item p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;}
+.callout-r{background:rgba(196,84,84,.06);border:1px solid rgba(196,84,84,.15);border-radius:10px;padding:20px 24px;margin-bottom:16px;}
+.callout-r h4{font-size:14px;font-weight:700;color:#c45454;margin-bottom:6px;}
+.callout-r p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;}
+.callout-g{background:rgba(74,158,142,.05);border:1px solid rgba(74,158,142,.12);border-radius:10px;padding:20px 24px;margin-bottom:16px;}
+.callout-g h4{font-size:14px;font-weight:700;color:#4a9e8e;margin-bottom:6px;}
+.callout-g p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
 .d-card{background:rgba(74,158,142,.06);border:1px solid rgba(74,158,142,.14);border-radius:12px;padding:20px 22px;}
-.d-card .dv{font-size:32px;font-weight:800;color:#4a9e8e;letter-spacing:-1.5px;line-height:1;margin-bottom:4px;}
-.d-card .dl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3);}
-.d-card .dd{font-size:12px;color:rgba(255,255,255,.4);margin-top:8px;line-height:1.5;}
-@media(max-width:700px){.two-col,.discovery-hero,.kpis{grid-template-columns:1fr 1fr;}}
+.d-card .dv{font-size:30px;font-weight:800;color:#4a9e8e;letter-spacing:-1px;line-height:1;margin-bottom:4px;}
+.d-card .dl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3);}
+.d-card .dd{font-size:12px;color:rgba(255,255,255,.35);margin-top:8px;line-height:1.5;}
+.stat-row{display:flex;gap:32px;margin-bottom:20px;flex-wrap:wrap;}
+.stat-item .sv{font-size:26px;font-weight:800;color:#fff;letter-spacing:-1px;}
+.stat-item .sl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:2px;}
+.divider{border:none;border-top:1px solid rgba(255,255,255,.05);margin:52px 0;}
+.note{font-size:12px;color:rgba(255,255,255,.3);line-height:1.8;margin-top:10px;}
+.note strong{color:rgba(255,255,255,.6);}
+.forward{background:rgba(74,158,142,.04);border:1px solid rgba(74,158,142,.1);border-radius:10px;padding:24px 28px;}
+.forward h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:14px;}
+.forward p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:10px;}
+.forward p:last-child{margin-bottom:0;}
+@media(max-width:700px){.two-col,.three-col,.kpis{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
 <div class="ctn">
 
 <nav>
-  <a href="#context">How Wasted Spend is Calculated</a>
-  <a href="#discovery">The Discovery Value</a>
-  <a href="#waste">Wasted Spend YoY</a>
-  <a href="#acos">High-ACoS Terms</a>
-  <a href="#summary">Summary</a>
+  <a href="#growth">Account Growth</a>
+  <a href="#harvesting">Harvesting & Structure</a>
+  <a href="#efficiency">Efficiency YoY</a>
+  <a href="#methodology">Wasted Spend Methodology</a>
+  <a href="#forward">Next Steps</a>
 </nav>
 
+<!-- HEADER -->
 <div class="hdr">
   <div class="hdr-left">
     <h1>Ad Efficiency<br>Analysis</h1>
-    <div class="sub">Lionstrong DE · Sponsored Products · YoY<br>May–Jul 2025 vs. Feb–Apr 2026</div>
+    <div class="sub">Lionstrong DE · Sponsored Products<br>May–Jul 2025 vs. Feb–Apr 2026</div>
+    <div class="context-bar">
+      2025 period &nbsp;·&nbsp; <strong>€28,545</strong> spend &nbsp;·&nbsp; <strong>€181,496</strong> sales &nbsp;·&nbsp; <strong>6,891</strong> orders &nbsp;·&nbsp; 62 days<br>
+      2026 period &nbsp;·&nbsp; <strong>€59,683</strong> spend &nbsp;·&nbsp; <strong>€346,722</strong> sales &nbsp;·&nbsp; <strong>12,292</strong> orders &nbsp;·&nbsp; 63 days
+    </div>
   </div>
   <div class="kpis">
-    <div class="kpi"><div class="kpi-v">-63%</div><div class="kpi-l">Waste rate drop</div></div>
-    <div class="kpi"><div class="kpi-v">-83%</div><div class="kpi-l">High-ACoS rate drop</div></div>
-    <div class="kpi"><div class="kpi-v">11.3%</div><div class="kpi-l">Discovery ACoS</div></div>
-    <div class="kpi"><div class="kpi-v">44.8%</div><div class="kpi-l">Sales from discovery</div></div>
+    <div class="kpi"><div class="kpi-v teal">+91%</div><div class="kpi-l">Sales growth YoY</div></div>
+    <div class="kpi"><div class="kpi-v teal">+78%</div><div class="kpi-l">Orders growth YoY</div></div>
+    <div class="kpi"><div class="kpi-v">-63%</div><div class="kpi-l">Waste rate reduction</div></div>
+    <div class="kpi"><div class="kpi-v">-83%</div><div class="kpi-l">High-ACoS rate reduction</div></div>
   </div>
 </div>
 
-<section id="context">
-  <h2>How Wasted Spend is Calculated — and Why It Matters</h2>
-  <div class="sub-line">The threshold used to define "wasted spend" has a dramatic impact on the resulting figure</div>
-  <div class="callout">
-    <h4>The 1-Click Problem</h4>
-    <p>A Search Term Report for any active Amazon account will contain thousands of search terms that received exactly one click and zero orders. This is completely normal — a single click provides no statistically meaningful signal about whether a term converts or not. Counting these as "wasted spend" produces an alarming number that has no actionable basis. On this account, applying a 1-click threshold produces a waste figure of <strong style="color:#c45454">~25%</strong> — a number that sounds critical but cannot be acted upon in any meaningful way.</p>
-  </div>
-  <div class="callout-note">
-    <h4>The Right Approach: 10+ Click Threshold</h4>
-    <p>A search term only becomes a candidate for negation or bid reduction once it has accumulated enough clicks to draw a statistically valid conclusion. The industry-standard minimum is 10 clicks with zero orders. At this threshold, the actionable waste on this account is <strong style="color:#4a9e8e">1.34%</strong> — a figure that is both honest and manageable.</p>
-  </div>
-  <div class="two-col">
-    <div>
-      <div class="sub-line" style="margin-bottom:10px;">May–Jul 2025 — by threshold</div>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>Threshold</th><th>Terms</th><th>Spend</th><th>% Total</th><th style="text-align:left;padding-left:8px">Signal</th></tr></thead>
-          <tbody><tr><td>1+ clicks</td><td class="bad">12185</td><td class="bad">€7,187.05</td><td class="bad">25.18%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">misleading</td></tr><tr><td>2+ clicks</td><td class="warn-c">2772</td><td class="warn-c">€3,969.97</td><td class="warn-c">13.91%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>3+ clicks</td><td class="warn-c">1305</td><td class="warn-c">€2,921.03</td><td class="warn-c">10.23%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>5+ clicks</td><td class="neutral-w">507</td><td class="neutral-w">€1,928.28</td><td class="neutral-w">6.76%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">directional</td></tr><tr><td>7+ clicks</td><td class="neutral-w">301</td><td class="neutral-w">€1,477.05</td><td class="neutral-w">5.17%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">directional</td></tr><tr><td>10+ clicks</td><td class="good">152</td><td class="good">€1,021.00</td><td class="good">3.58%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">actionable</td></tr></tbody>
-        </table>
-      </div>
+<!-- SECTION 1: GROWTH -->
+<section id="growth">
+  <h2>Account Growth — What the Numbers Show</h2>
+  <div class="sub-line">The baseline before anything else — scale and trajectory</div>
+  <div class="three-col">
+    <div class="d-card">
+      <div class="dv">+91%</div>
+      <div class="dl">Sales growth YoY</div>
+      <div class="dd">€181,496 → €346,722 in attributed sales across the same 60-day window</div>
     </div>
-    <div>
-      <div class="sub-line" style="margin-bottom:10px;">Feb–Apr 2026 — by threshold</div>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>Threshold</th><th>Terms</th><th>Spend</th><th>% Total</th><th style="text-align:left;padding-left:8px">Signal</th></tr></thead>
-          <tbody><tr><td>1+ clicks</td><td class="bad">25853</td><td class="bad">€16,800.07</td><td class="bad">28.15%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">misleading</td></tr><tr><td>2+ clicks</td><td class="warn-c">4112</td><td class="warn-c">€6,201.46</td><td class="warn-c">10.39%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>3+ clicks</td><td class="warn-c">1616</td><td class="warn-c">€3,756.69</td><td class="warn-c">6.29%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>5+ clicks</td><td class="neutral-w">568</td><td class="neutral-w">€2,078.71</td><td class="neutral-w">3.48%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">directional</td></tr><tr><td>7+ clicks</td><td class="neutral-w">278</td><td class="neutral-w">€1,346.62</td><td class="neutral-w">2.26%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">directional</td></tr><tr><td>10+ clicks</td><td class="good">122</td><td class="good">€797.74</td><td class="good">1.34%</td><td style="font-size:11px;color:rgba(255,255,255,.3);text-align:left;padding-left:8px">actionable</td></tr></tbody>
-        </table>
-      </div>
+    <div class="d-card">
+      <div class="dv">+78%</div>
+      <div class="dl">Orders growth YoY</div>
+      <div class="dd">6,891 → 12,292 orders — volume growth aligned with spend scaling</div>
+    </div>
+    <div class="d-card">
+      <div class="dv">+109%</div>
+      <div class="dl">Spend growth YoY</div>
+      <div class="dd">€28,545 → €59,683 — budget scaled deliberately to capture growing demand</div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<section id="discovery">
-  <h2>The Value of Discovery Traffic</h2>
-  <div class="sub-line">The search terms classified as "noise" at 1-click are the same mechanism that generates nearly half of all sales</div>
+<!-- SECTION 2: HARVESTING & STRUCTURE -->
+<section id="harvesting">
+  <h2>Harvesting & Campaign Structure</h2>
+  <div class="sub-line">The most significant structural change between the two periods</div>
 
-  <div class="discovery-hero">
+  <div class="two-col">
+    <div>
+      <div class="sub-line" style="margin-bottom:8px;">May–Jul 2025 — previous structure</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Match Type</th><th>Spend</th><th>% Total</th><th>ACoS</th></tr></thead>
+          <tbody>
+            <tr><td>Auto (-)</td><td class="bad">€19,933</td><td class="bad">69.8%</td><td>15.6%</td></tr>
+            <tr><td>Broad</td><td>€4,350</td><td>15.2%</td><td>15.8%</td></tr>
+            <tr><td>Phrase</td><td>€608</td><td>2.1%</td><td>10.6%</td></tr>
+            <tr><td>Exact</td><td class="warn-c">€3,654</td><td class="warn-c">12.8%</td><td>17.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="sub-line" style="margin-bottom:8px;">Feb–Apr 2026 — current structure</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Match Type</th><th>Spend</th><th>% Total</th><th>ACoS</th></tr></thead>
+          <tbody>
+            <tr><td>Auto (-)</td><td class="warn-c">€24,831</td><td class="warn-c">41.6%</td><td>16.0%</td></tr>
+            <tr><td>Broad</td><td>€13,818</td><td>23.2%</td><td>16.6%</td></tr>
+            <tr><td>Phrase</td><td>€6,440</td><td>10.8%</td><td>16.9%</td></tr>
+            <tr><td>Exact</td><td class="good">€14,595</td><td class="good">24.5%</td><td>20.8%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    Auto dropped from <strong style="color:#c45454">69.8%</strong> to <strong style="color:#c9a520">41.6%</strong> — Exact nearly doubled from <strong style="color:#c9a520">12.8%</strong> to <strong style="color:#4a9e8e">24.5%</strong>. This is direct evidence of the harvesting process in action.
+  </div>
+
+  <div class="fw" style="margin-top:20px;">
+    <div class="fw-item">
+      <div class="fw-label">What 69.8% Auto Meant</div>
+      <p>With nearly 70% in auto, the account had no keyword-level control. Amazon's algorithm decided where money went. No bid strategy, no placement control, no defense of high-value search terms. Revenue happened by chance, not by design.</p>
+    </div>
+    <div class="fw-item">
+      <div class="fw-label">The Harvesting Process</div>
+      <p>Auto and broad campaigns continuously discover converting search terms. Once a term proves performance, it gets harvested into an Exact Match campaign — giving full control over bid, placement, and budget. Auto spend on that term is then reduced, making room for the next wave of discovery.</p>
+    </div>
+    <div class="fw-item">
+      <div class="fw-label">Why Exact ACoS Looks Higher</div>
+      <p>Exact campaigns run with aggressive bids intentionally — the goal is to win auctions consistently on proven, high-intent keywords. This drives sales velocity, which Amazon treats as an organic ranking signal. Part of the exact match investment pays for ranking, not just for the immediate sale. Competition on these terms is also significantly more intense than in auto auctions.</p>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-top:4px;">
     <div class="d-card">
       <div class="dv">€155,393</div>
-      <div class="dl">Sales from discovery</div>
-      <div class="dd">Generated by auto-match search terms — the same traffic pool that produces low-click, zero-order terms</div>
+      <div class="dl">Sales from discovery (auto)</div>
+      <div class="dd">Generated by auto-match campaigns in the current period</div>
     </div>
     <div class="d-card">
       <div class="dv">11.3%</div>
       <div class="dl">Discovery ACoS</div>
-      <div class="dd">Auto-match converters run at 11.3% ACoS — among the most efficient traffic sources in the account</div>
+      <div class="dd">Auto-match converters run efficiently — low bids, high volume of search term exploration</div>
     </div>
     <div class="d-card">
       <div class="dv">44.8%</div>
-      <div class="dl">Of total sales</div>
-      <div class="dd">Nearly half of all attributed revenue comes from discovery traffic — terms found by letting the algorithm explore</div>
-    </div>
-  </div>
-
-  <div class="callout-note" style="margin-bottom:16px;">
-    <h4>Why You Cannot Eliminate the "Noise"</h4>
-    <p>Discovery traffic works as a funnel. For every term that eventually converts at click 12, there are dozens of terms that get 1 click and never return. These single-click impressions are the cost of finding profitable new keywords. Aggressively negating at 1-2 clicks would cut this discovery mechanism — reducing the noise figure on paper while eliminating the engine that generates <strong style="color:#4a9e8e">€155,393 in sales at 11.3% ACoS</strong>.</p>
-  </div>
-
-  <div class="fw">
-    <div class="fw-item">
-      <div class="fw-label">If You Negate at 1 Click</div>
-      <p>Waste % drops to near zero on paper. But you also negate thousands of terms before they have a chance to convert — including the ones that would have become your best performers. Net effect: lower sales, higher overall ACoS.</p>
-    </div>
-    <div class="fw-item">
-      <div class="fw-label">If You Negate at 10+ Clicks</div>
-      <p>Only terms with statistically proven non-performance are removed. Discovery continues uninterrupted. The account finds new converting keywords continuously while eliminating only confirmed waste.</p>
-    </div>
-    <div class="fw-item">
-      <div class="fw-label">The Result on This Account</div>
-      <p>1.34% actionable waste. 44.8% of sales from discovery traffic at 16.0% ACoS. This is what a well-managed discovery funnel looks like in practice.</p>
-    </div>
-  </div>
-
-  <div style="margin-top:28px;">
-    <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;">Discovery → Harvesting → Exact Match</div>
-    <div class="sub-line">How discovery spend converts into increasingly efficient exact match campaigns over time</div>
-    <div class="callout-note" style="margin-bottom:20px;">
-      <h4>The Harvesting Flywheel</h4>
-      <p>Auto and broad campaigns act as a continuous keyword research engine. When a search term accumulates enough converting data, it gets harvested into a dedicated Exact Match campaign where bids can be precisely controlled. Over time, the Exact portfolio grows with proven performers while spend on discovery is reduced for those specific terms — improving efficiency without sacrificing volume. This is an ongoing, compounding process: the longer it runs, the more refined the account becomes.</p>
-    </div>
-    <div class="sub-line" style="margin-bottom:12px;">Current spend distribution by match type — Feb–Apr 2026</div>
-    <div class="tbl-wrap">
-      <table>
-        <thead><tr><th>Match Type</th><th>Spend</th><th>% of Total</th><th>Sales</th><th>ACoS</th><th>Orders</th><th>Role</th></tr></thead>
-        <tbody>
-          <tr><td>Auto (-)</td><td class="y26">€24,830.69</td><td class="y26">41.6%</td><td>€155,393.35</td><td class="good">16.0%</td><td>5,533</td><td style="text-align:left;font-size:11px;color:rgba(255,255,255,.3)">Discovery engine</td></tr>
-          <tr><td>Broad</td><td class="y26">€13,817.77</td><td class="y26">23.2%</td><td>€83,114.55</td><td class="good">16.6%</td><td>2,939</td><td style="text-align:left;font-size:11px;color:rgba(255,255,255,.3)">Discovery + reach</td></tr>
-          <tr><td>Phrase</td><td class="y26">€6,440.23</td><td class="y26">10.8%</td><td>€38,167.40</td><td class="good">16.9%</td><td>1,353</td><td style="text-align:left;font-size:11px;color:rgba(255,255,255,.3)">Mid-funnel</td></tr>
-          <tr><td>Exact</td><td class="y26">€14,594.51</td><td class="y26">24.5%</td><td>€70,046.98</td><td class="warn-c">20.8%</td><td>2,467</td><td style="text-align:left;font-size:11px;color:rgba(255,255,255,.3)">Harvested performers</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      <div style="margin-bottom:20px;">
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;">Match Type Split — YoY</div>
-        <div class="two-col">
-          <div>
-            <div class="sub-line" style="margin-bottom:8px;">May–Jul 2025 — previous management</div>
-            <div class="tbl-wrap">
-              <table>
-                <thead><tr><th>Match Type</th><th>Spend</th><th>% Total</th><th>ACoS</th></tr></thead>
-                <tbody>
-                  <tr><td>Auto (-)</td><td class="bad">€19,933</td><td class="bad">69.8%</td><td>15.6%</td></tr>
-                  <tr><td>Broad</td><td>€4,350</td><td>15.2%</td><td>15.8%</td></tr>
-                  <tr><td>Phrase</td><td>€607</td><td>2.1%</td><td>10.6%</td></tr>
-                  <tr><td>Exact</td><td class="warn-c">€3,653</td><td class="warn-c">12.8%</td><td>17.7%</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div>
-            <div class="sub-line" style="margin-bottom:8px;">Feb–Apr 2026 — current structure</div>
-            <div class="tbl-wrap">
-              <table>
-                <thead><tr><th>Match Type</th><th>Spend</th><th>% Total</th><th>ACoS</th></tr></thead>
-                <tbody>
-                  <tr><td>Auto (-)</td><td class="warn-c">€24,830</td><td class="warn-c">41.6%</td><td>16.0%</td></tr>
-                  <tr><td>Broad</td><td>€13,817</td><td>23.2%</td><td>16.6%</td></tr>
-                  <tr><td>Phrase</td><td>€6,440</td><td>10.8%</td><td>16.9%</td></tr>
-                  <tr><td>Exact</td><td class="good">€14,594</td><td class="good">24.5%</td><td>20.8%</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.35);line-height:1.8;">
-          Auto spend dropped from <strong style="color:#c45454">69.8%</strong> to <strong style="color:#c9a520">41.6%</strong> — Exact match nearly doubled from <strong style="color:#c9a520">12.8%</strong> to <strong style="color:#4a9e8e">24.5%</strong>. This shift is direct evidence that the harvesting process is working: proven terms have been moved from discovery into controlled exact match campaigns where bids, placement, and budgets are managed precisely.
-        </div>
-        <div class="fw" style="margin-top:16px;">
-          <div class="fw-item">
-            <div class="fw-label">What 69.8% Auto Means</div>
-            <p>When nearly 70% of spend runs through auto with low bids, the account is entirely dependent on Amazon's algorithm to decide where money goes. There is no keyword-level control, no placement strategy, and no ability to defend specific search terms against competitors. Revenue happens by chance, not by design.</p>
-          </div>
-          <div class="fw-item">
-            <div class="fw-label">What the Shift to Exact Means</div>
-            <p>Every percentage point moved from auto to exact represents a keyword that has been proven, harvested, and brought under full control. Bid, placement modifier, dayparting, budget — all managed at the keyword level. The account stops relying on Amazon's decisions and starts making its own.</p>
-          </div>
-          <div class="fw-item">
-            <div class="fw-label">Organic Ranking as a Side Effect</div>
-            <p>Consistent ad spend on an exact match keyword drives consistent sales velocity on that keyword. Amazon's ranking algorithm treats sales velocity as a relevance signal — meaning exact match campaigns actively improve organic position over time. This is why exact ACoS appears higher: part of the investment is paying for ranking, not just for the immediate sale.</p>
-          </div>
-        </div>
-      </div>
-      Discovery (auto + broad) runs at <strong style="color:#4a9e8e">16.0–16.6% ACoS</strong> using intentionally low bids — the goal is to find converting terms at minimal cost, not to dominate auctions. Exact match operates differently: bids are set aggressively to win auctions consistently on proven, high-intent keywords. This serves two purposes beyond immediate sales — <strong style="color:rgba(255,255,255,.6)">cleaner traffic quality</strong> (exact queries have stronger purchase intent) and <strong style="color:rgba(255,255,255,.6)">organic ranking improvement</strong> (consistent sales velocity on a keyword signals relevance to Amazon's algorithm). The higher ACoS on exact (20.8%) is not inefficiency — it is the deliberate cost of owning those keywords. Competition is significantly more aggressive on exact auctions precisely because these are the terms every competitor also wants. The current split — 75% discovery, 25% exact — is healthy for an account actively scaling its keyword portfolio.
+      <div class="dl">Of total attributed sales</div>
+      <div class="dd">Nearly half of all revenue comes from the discovery mechanism that also produces "noise" at 1-click</div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<section id="waste">
-  <h2>Wasted Spend — YoY Comparison</h2>
-  <div class="sub-line">10+ click threshold · search terms with zero orders across both periods</div>
-  <div class="stat-row">
-    <div class="stat-item"><div class="sv">3.58%</div><div class="sl">Waste rate 2025</div></div>
-    <div class="stat-item"><div class="sv" style="color:#4a9e8e">1.34%</div><div class="sl">Waste rate 2026</div></div>
-    <div class="stat-item"><div class="sv">-62.6%</div><div class="sl">Rate reduction</div></div>
-    <div class="stat-item"><div class="sv">+109%</div><div class="sl">Spend growth</div></div>
-  </div>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr>
-        <th>Threshold</th>
-        <th>2025 Spend</th><th>2025 %</th><th>2025 Terms</th>
-        <th>2026 Spend</th><th>2026 %</th><th>2026 Terms</th>
-        <th>Rate Reduction</th>
-      </tr></thead>
-      <tbody><tr><td>5+ clicks</td><td class="y25">€1,928.28</td><td class="y25">6.76%</td><td class="y25">507</td><td class="y26">€2,078.71</td><td class="y26">3.48%</td><td class="y26">568</td><td class="good">-48.4%</td></tr><tr><td>7+ clicks</td><td class="y25">€1,477.05</td><td class="y25">5.17%</td><td class="y25">301</td><td class="y26">€1,346.62</td><td class="y26">2.26%</td><td class="y26">278</td><td class="good">-56.4%</td></tr><tr><td>10+ clicks</td><td class="y25">€1,021.00</td><td class="y25">3.58%</td><td class="y25">152</td><td class="y26">€797.74</td><td class="y26">1.34%</td><td class="y26">122</td><td class="good">-62.6%</td></tr></tbody>
-    </table>
-  </div>
-</section>
+<!-- SECTION 3: EFFICIENCY -->
+<section id="efficiency">
+  <h2>Efficiency Improvements YoY</h2>
+  <div class="sub-line">Wasted spend and high-ACoS terms — both at record lows relative to spend</div>
 
-<hr class="divider">
-
-<section id="acos">
-  <h2>High-ACoS Terms — YoY Comparison</h2>
-  <div class="sub-line">Terms with orders but ACoS above threshold (min. €20 spend) — inefficient converters</div>
   <div class="stat-row">
-    <div class="stat-item"><div class="sv">2.31%</div><div class="sl">High-ACoS rate 2025 (&gt;50%)</div></div>
+    <div class="stat-item"><div class="sv" style="color:rgba(255,255,255,.4)">3.58%</div><div class="sl">Waste rate 2025 (10+ clicks)</div></div>
+    <div class="stat-item"><div class="sv" style="color:#4a9e8e">1.34%</div><div class="sl">Waste rate 2026 (10+ clicks)</div></div>
+    <div class="stat-item"><div class="sv" style="color:rgba(255,255,255,.4)">2.31%</div><div class="sl">High-ACoS rate 2025 (&gt;50%)</div></div>
     <div class="stat-item"><div class="sv" style="color:#4a9e8e">0.39%</div><div class="sl">High-ACoS rate 2026 (&gt;50%)</div></div>
-    <div class="stat-item"><div class="sv">-83%</div><div class="sl">Rate reduction</div></div>
   </div>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr>
-        <th>Threshold</th>
-        <th>2025 Spend</th><th>2025 %</th><th>2025 Terms</th>
-        <th>2026 Spend</th><th>2026 %</th><th>2026 Terms</th>
-      </tr></thead>
-      <tbody>
-        <tr><td>&gt;50% ACoS</td><td class="y25">€658.62</td><td class="y25">2.31%</td><td class="y25">12</td><td class="y26">€232.78</td><td class="y26">0.39%</td><td class="y26">7</td></tr>
-        <tr><td>&gt;75% ACoS</td><td class="y25">€114.33</td><td class="y25">0.40%</td><td class="y25">3</td><td class="y26">€182.48</td><td class="y26">0.31%</td><td class="y26">6</td></tr>
-        <tr><td>&gt;100% ACoS</td><td class="y25">€30.64</td><td class="y25">0.11%</td><td class="y25">1</td><td class="y26">€115.16</td><td class="y26">0.19%</td><td class="y26">3</td></tr>
-      </tbody>
-    </table>
+
+  <div class="two-col">
+    <div>
+      <div class="sub-line" style="margin-bottom:8px;">Wasted spend (10+ clicks, 0 orders)</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Threshold</th><th>2025</th><th>2025 %</th><th>2026</th><th>2026 %</th></tr></thead>
+          <tbody>
+            <tr><td>5+ clicks</td><td class="y25">€1,928</td><td class="y25">6.76%</td><td class="y26">€2,079</td><td class="y26">3.48%</td></tr><tr><td>7+ clicks</td><td class="y25">€1,477</td><td class="y25">5.17%</td><td class="y26">€1,347</td><td class="y26">2.26%</td></tr><tr><td>10+ clicks</td><td class="y25">€1,021</td><td class="y25">3.58%</td><td class="y26">€798</td><td class="y26">1.34%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="sub-line" style="margin-bottom:8px;">High-ACoS terms (orders present, min. €20 spend)</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Threshold</th><th>2025</th><th>2025 %</th><th>2026</th><th>2026 %</th></tr></thead>
+          <tbody>
+            <tr><td>&gt;50% ACoS</td><td class="y25">€659</td><td class="y25">2.31%</td><td class="y26">€233</td><td class="y26">0.39%</td></tr><tr><td>&gt;75% ACoS</td><td class="y25">€114</td><td class="y25">0.40%</td><td class="y26">€182</td><td class="y26">0.31%</td></tr><tr><td>&gt;100% ACoS</td><td class="y25">€31</td><td class="y25">0.11%</td><td class="y26">€115</td><td class="y26">0.19%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<section id="summary">
-  <h2>Summary</h2>
-  <div class="summ" style="margin-top:16px;">
-    <div class="s-item neg">
-      <h4>How Wasted Spend Figures Can Be Inflated</h4>
-      <p>Using a 1-click threshold produces a waste figure of ~25% on this account — a number that sounds alarming but is methodologically unsound. At 1 click, there is no statistical basis to classify a term as wasted. Any analysis using this threshold is designed to create urgency, not to reflect reality.</p>
+<!-- SECTION 4: METHODOLOGY -->
+<section id="methodology">
+  <h2>Wasted Spend — Why the Definition Matters</h2>
+  <div class="sub-line">The same account produces very different "waste" figures depending on the threshold used</div>
+
+  <div class="callout-r">
+    <h4>The 1-Click Problem</h4>
+    <p>Any active Amazon account generates thousands of search terms with exactly one click and zero orders. This is structurally unavoidable — it is how discovery works. Counting these as "wasted spend" produces a figure of <strong style="color:#c45454">~25%</strong> on this account. That number cannot be acted upon: you cannot negate terms at 1 click without also negating the next best-performing keyword before it has a chance to convert. The figure is technically accurate and completely meaningless as a management signal.</p>
+  </div>
+  <div class="callout-g">
+    <h4>10+ Clicks: The Actionable Threshold</h4>
+    <p>At 10+ clicks with zero orders, a term has had statistically sufficient exposure to demonstrate non-performance. These are the only terms worth negating. On this account, that figure is <strong style="color:#4a9e8e">1.34%</strong> — down from 3.58% in the same period last year, on a budget that doubled.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="sub-line" style="margin-bottom:8px;">May–Jul 2025</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Threshold</th><th>Terms</th><th>Spend</th><th>%</th><th style="text-align:left;padding-left:8px">Signal</th></tr></thead>
+          <tbody><tr><td>1+ clicks</td><td class="bad">12185</td><td class="bad">€7,187</td><td class="bad">25.2%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">misleading</td></tr><tr><td>2+ clicks</td><td class="warn-c">2772</td><td class="warn-c">€3,970</td><td class="warn-c">13.9%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>3+ clicks</td><td class="warn-c">1305</td><td class="warn-c">€2,921</td><td class="warn-c">10.2%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>5+ clicks</td><td class="neutral-w">507</td><td class="neutral-w">€1,928</td><td class="neutral-w">6.8%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">directional</td></tr><tr><td>7+ clicks</td><td class="neutral-w">301</td><td class="neutral-w">€1,477</td><td class="neutral-w">5.2%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">directional</td></tr><tr><td>10+ clicks</td><td class="good">152</td><td class="good">€1,021</td><td class="good">3.6%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">actionable</td></tr></tbody>
+        </table>
+      </div>
     </div>
-    <div class="s-item">
-      <h4>The Same Traffic Generates 44.8% of All Sales</h4>
-      <p>The discovery mechanism that produces single-click, zero-order terms is the same mechanism that generated €155,393 in sales at 11.3% ACoS in the last 63 days. Eliminating "noise" at 1 click means eliminating the engine behind nearly half of all revenue.</p>
+    <div>
+      <div class="sub-line" style="margin-bottom:8px;">Feb–Apr 2026</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Threshold</th><th>Terms</th><th>Spend</th><th>%</th><th style="text-align:left;padding-left:8px">Signal</th></tr></thead>
+          <tbody><tr><td>1+ clicks</td><td class="bad">25853</td><td class="bad">€16,800</td><td class="bad">28.1%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">misleading</td></tr><tr><td>2+ clicks</td><td class="warn-c">4112</td><td class="warn-c">€6,201</td><td class="warn-c">10.4%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>3+ clicks</td><td class="warn-c">1616</td><td class="warn-c">€3,757</td><td class="warn-c">6.3%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">statistical noise</td></tr><tr><td>5+ clicks</td><td class="neutral-w">568</td><td class="neutral-w">€2,079</td><td class="neutral-w">3.5%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">directional</td></tr><tr><td>7+ clicks</td><td class="neutral-w">278</td><td class="neutral-w">€1,347</td><td class="neutral-w">2.3%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">directional</td></tr><tr><td>10+ clicks</td><td class="good">122</td><td class="good">€798</td><td class="good">1.3%</td><td style="font-size:11px;color:rgba(255,255,255,.25);text-align:left;padding-left:8px">actionable</td></tr></tbody>
+        </table>
+      </div>
     </div>
-    <div class="s-item">
-      <h4>Actual Actionable Waste: 1.34%</h4>
-      <p>At the correct 10+ click threshold, actionable wasted spend is 1.34% of total spend in 2026 — down from 3.58% in the same period last year. Achieved while total spend more than doubled (+109%).</p>
-    </div>
-    <div class="s-item">
-      <h4>High-ACoS Spend Down 83% as a Rate</h4>
-      <p>Terms with orders but ACoS &gt;50% dropped from 2.31% to 0.39% of total spend — from €658 to €233, on a budget that doubled. Continuously monitored and addressed through automated bid optimization.</p>
-    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECTION 5: FORWARD -->
+<section id="forward">
+  <h2>Where This Goes From Here</h2>
+  <div class="forward">
+    <p>The account is in a healthy scaling phase. Discovery is feeding a growing exact match portfolio, efficiency metrics are improving year-over-year on a doubled budget, and actionable waste is at 1.34%. The structure is working as designed.</p>
+    <p>The next phase of optimization focuses on progressively reducing auto spend on already-harvested terms — redirecting that budget toward new discovery or scaling proven exact match campaigns further. As the exact portfolio matures, overall ACoS will compress without sacrificing volume.</p>
+    <p>High-ACoS terms (&gt;50%, orders present) represent 0.39% of total spend and are continuously addressed through automated bid optimization. No manual intervention is required at current levels — automated systems handle this as part of standard account management.</p>
   </div>
 </section>
 

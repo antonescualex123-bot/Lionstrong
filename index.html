@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wasted Spend Analysis — Lionstrong DE</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:#0a1518;color:#cdd8dc;min-height:100vh;}
+.ctn{max-width:1100px;margin:0 auto;padding:48px 36px;}
+nav{display:flex;gap:20px;margin-bottom:44px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06);}
+nav a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;}
+nav a:hover{color:#4a9e8e;}
+.hdr{display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:48px;}
+.hdr-left h1{font-size:42px;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:8px;}
+.hdr-left .sub{font-size:13px;color:rgba(255,255,255,.35);}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.kpi{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 18px;}
+.kpi-v{font-size:26px;font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;}
+.kpi-l{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.3);margin-top:4px;}
+section{margin-bottom:48px;}
+h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.3px;}
+.sub-line{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.fw{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:22px 24px;margin-bottom:0;display:flex;gap:24px;flex-wrap:wrap;}
+.fw-item{flex:1;min-width:180px;}
+.fw-label{font-size:12px;font-weight:700;color:#4a9e8e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px;}
+.fw-item p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;}
+.tbl-wrap{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.05);border-radius:10px;overflow:hidden;}
+table{width:100%;border-collapse:collapse;}
+th{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.3);padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);text-align:right;}
+th:first-child{text-align:left;}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.03);text-align:right;font-variant-numeric:tabular-nums;font-size:13px;}
+td:first-child{text-align:left;color:#fff;font-weight:600;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,.015);}
+.y25{color:rgba(255,255,255,.38)!important;}
+.y26{color:rgba(255,255,255,.75)!important;}
+.good{color:#4a9e8e!important;font-weight:700;}
+.bad{color:#c45454!important;font-weight:700;}
+.neutral{color:rgba(255,255,255,.35)!important;}
+.b-g{background:rgba(74,158,142,.1);color:#5ba89d;font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;}
+.b-y{background:rgba(201,165,32,.08);color:#c9a520;font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;}
+.b-r{background:rgba(196,84,84,.08);color:#c45454;font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;}
+.summ{display:flex;flex-direction:column;gap:14px;}
+.s-item{border-left:2px solid #4a9e8e;padding-left:14px;}
+.s-item.warn{border-left-color:#c9a520;}
+.s-item h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+.s-item p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="ctn">
 
+<nav>
+  <a href="#methodology">Methodology</a>
+  <a href="#comparison">YoY Comparison</a>
+  <a href="#thresholds">Threshold Analysis</a>
+  <a href="#summary">Summary</a>
+</nav>
+
+<div class="hdr">
+  <div class="hdr-left">
+    <h1>Wasted Spend<br>Analysis</h1>
+    <div class="sub">Lionstrong DE · Sponsored Products · YoY<br>May–Jul 2025 vs. Feb–Apr 2026</div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-v">-63%</div><div class="kpi-l">Waste reduction</div></div>
+    <div class="kpi"><div class="kpi-v">2×</div><div class="kpi-l">Spend scaled</div></div>
+    <div class="kpi"><div class="kpi-v">1.34%</div><div class="kpi-l">Waste rate 2026</div></div>
+    <div class="kpi"><div class="kpi-v">3.58%</div><div class="kpi-l">Waste rate 2025</div></div>
+  </div>
+</div>
+
+<section id="methodology">
+  <h2>Methodology</h2>
+  <div class="sub-line">Source: SP Search Term Reports · Extracted directly from Amazon Advertising Console</div>
+  <div class="fw">
+    <div class="fw-item">
+      <div class="fw-label">Threshold</div>
+      <p>A search term is "wasted spend" only when it has 10+ clicks with zero orders. Single-click zero-conversion terms are normal noise — not actionable waste.</p>
+    </div>
+    <div class="fw-item">
+      <div class="fw-label">Why 10+ Clicks</div>
+      <p>Below 10 clicks, statistical significance is too low. Flagging 1-click terms artificially inflates the waste figure — a tactic used to manufacture urgency in external audits.</p>
+    </div>
+    <div class="fw-item">
+      <div class="fw-label">Periods Compared</div>
+      <p>2025: May 29 – Jul 29 (62 days, €28,545 spend)<br>2026: Feb 9 – Apr 13 (63 days, €59,683 spend)</p>
+    </div>
+  </div>
+</section>
+
+<section id="comparison">
+  <h2>YoY Comparison — 10+ Click Threshold</h2>
+  <div class="sub-line">2025 total spend: <strong style="color:rgba(255,255,255,.6)">€28,545</strong> &nbsp;·&nbsp; 2026 total spend: <strong style="color:rgba(255,255,255,.6)">€59,683</strong> &nbsp;·&nbsp; Spend growth: <strong style="color:rgba(255,255,255,.6)">+109%</strong></div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th>Metric</th><th>May–Jul 2025</th><th>Feb–Apr 2026</th><th>Change</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Wasted Spend (€)</td><td class="y25">€1,021.00</td><td class="y26">€797.74</td><td class="good">-€223 (-21.8%)</td></tr>
+        <tr><td>Wasted Spend (%)</td><td class="y25">3.58%</td><td class="y26">1.34%</td><td class="good">-2.24pp (-62.6%)</td></tr>
+        <tr><td>Terms Flagged</td><td class="y25">152</td><td class="y26">122</td><td class="good">-30 terms</td></tr>
+        <tr><td>Total Spend</td><td class="y25">€28,545</td><td class="y26">€59,683</td><td class="neutral">+€31,138 (+109%)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="thresholds">
+  <h2>Threshold Sensitivity Analysis</h2>
+  <div class="sub-line">Same data, three click thresholds — shows how the definition of "wasted spend" impacts the figure</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th>Threshold</th>
+        <th>2025 Spend</th><th>2025 %</th><th>2025 Terms</th>
+        <th>2026 Spend</th><th>2026 %</th><th>2026 Terms</th>
+        <th>Rate Reduction</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>5+ clicks</td>
+          <td class="y25">€1,928.28</td>
+          <td class="y25">6.76%</td>
+          <td class="y25">507</td>
+          <td class="y26">€2,078.71</td>
+          <td class="y26">3.48%</td>
+          <td class="y26">568</td>
+          <td class="good">-48.4%</td>
+        </tr>
+        <tr>
+          <td>7+ clicks</td>
+          <td class="y25">€1,477.05</td>
+          <td class="y25">5.17%</td>
+          <td class="y25">301</td>
+          <td class="y26">€1,346.62</td>
+          <td class="y26">2.26%</td>
+          <td class="y26">278</td>
+          <td class="good">-56.4%</td>
+        </tr>
+        <tr>
+          <td>10+ clicks</td>
+          <td class="y25">€1,021.00</td>
+          <td class="y25">3.58%</td>
+          <td class="y25">152</td>
+          <td class="y26">€797.74</td>
+          <td class="y26">1.34%</td>
+          <td class="y26">122</td>
+          <td class="good">-62.6%</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.35);line-height:2;">
+    <span class="b-r">5+ clicks</span>&nbsp; Most permissive — includes statistical noise, directional only &nbsp;&nbsp;
+    <span class="b-y">7+ clicks</span>&nbsp; Intermediate &nbsp;&nbsp;
+    <span class="b-g">10+ clicks</span>&nbsp; Recommended — statistically meaningful, actionable waste only
+  </div>
+</section>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <div class="sub-line" style="margin-bottom:18px;"></div>
+  <div class="summ">
+    <div class="s-item">
+      <h4>Waste Rate Cut by 63% Despite Doubling Spend</h4>
+      <p>From 3.58% in mid-2025 to 1.34% in early 2026. Absolute wasted spend also decreased from €1,021 to €798, even though total spend more than doubled (+109%). This demonstrates improving account efficiency.</p>
+    </div>
+    <div class="s-item">
+      <h4>Negative Keyword Management is Working</h4>
+      <p>Reduction from 152 to 122 flagged terms (10+ threshold) reflects ongoing negative keyword additions. Wasted spend per flagged term decreased, meaning higher-spend problem terms are being caught earlier.</p>
+    </div>
+    <div class="s-item warn">
+      <h4>Lower Thresholds Show Absolute Spend Increase</h4>
+      <p>At the 5-click threshold, absolute wasted spend is marginally higher in 2026 (€2,079 vs €1,928). Expected given +109% spend growth — the rate still improved from 6.76% to 3.48%.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
